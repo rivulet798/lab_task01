@@ -2,7 +2,6 @@ package com.epam.repository;
 
 import com.epam.beans.Identifier;
 
-import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
