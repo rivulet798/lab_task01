@@ -7,10 +7,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class CountryRepositoryImpl implements CountryRepository {
-    private Map<Integer, Country> countries = new HashMap<>();
+    private Map<Integer, Country> countries;
+
+    public CountryRepositoryImpl() {
+        countries = new HashMap<>();
+    }
 
     @Override
-    public Map<Integer,Country> getDataStorage() {
+    public Map<Integer, Country> getDataStorage() {
         return countries;
     }
 }

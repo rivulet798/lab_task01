@@ -2,7 +2,8 @@ package com.epam.beans;
 
 import java.util.List;
 
-public class User implements Identifier{
+public class User implements Identifier {
+    static final long serialVersionUID = 1L;
     private int id;
     private String login;
     private String password;
@@ -62,15 +63,27 @@ public class User implements Identifier{
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         User user = (User) o;
 
-        if (id != user.id) return false;
-        if (login != null ? !login.equals(user.login) : user.login != null) return false;
-        if (password != null ? !password.equals(user.password) : user.password != null) return false;
-        if (visitedTours != null ? !visitedTours.equals(user.visitedTours) : user.visitedTours != null) return false;
+        if (id != user.id) {
+            return false;
+        }
+        if (login != null ? !login.equals(user.login) : user.login != null) {
+            return false;
+        }
+        if (password != null ? !password.equals(user.password) : user.password != null) {
+            return false;
+        }
+        if (visitedTours != null ? !visitedTours.equals(user.visitedTours) : user.visitedTours != null) {
+            return false;
+        }
         return reviews != null ? reviews.equals(user.reviews) : user.reviews == null;
 
     }

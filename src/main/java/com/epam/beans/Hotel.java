@@ -1,6 +1,7 @@
 package com.epam.beans;
 
-public class Hotel implements Identifier{
+public class Hotel implements Identifier {
+    static final long serialVersionUID = 3L;
     private int id;
     private String name;
     private String photo;
@@ -60,15 +61,27 @@ public class Hotel implements Identifier{
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         Hotel hotel = (Hotel) o;
 
-        if (id != hotel.id) return false;
-        if (stars != hotel.stars) return false;
-        if (name != null ? !name.equals(hotel.name) : hotel.name != null) return false;
-        if (photo != null ? !photo.equals(hotel.photo) : hotel.photo != null) return false;
+        if (id != hotel.id) {
+            return false;
+        }
+        if (stars != hotel.stars) {
+            return false;
+        }
+        if (name != null ? !name.equals(hotel.name) : hotel.name != null) {
+            return false;
+        }
+        if (photo != null ? !photo.equals(hotel.photo) : hotel.photo != null) {
+            return false;
+        }
         return country != null ? country.equals(hotel.country) : hotel.country == null;
 
     }

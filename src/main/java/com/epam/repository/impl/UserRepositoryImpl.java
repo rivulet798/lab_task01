@@ -7,7 +7,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class UserRepositoryImpl implements UserRepository {
-    private Map<Integer, User> users = new HashMap<>();
+    private Map<Integer, User> users;
+
+    public UserRepositoryImpl() {
+        users = new HashMap<>();
+    }
 
     @Override
     public Map<Integer, User> getDataStorage() {

@@ -7,7 +7,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class HotelRepositoryImpl implements HotelRepository {
-    private Map<Integer, Hotel> hotels = new HashMap<>();
+    private Map<Integer, Hotel> hotels;
+
+    public HotelRepositoryImpl() {
+        hotels = new HashMap<>();
+    }
 
     @Override
     public Map<Integer, Hotel> getDataStorage() {

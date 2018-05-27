@@ -7,7 +7,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ReviewRepositoryImpl implements ReviewRepository {
-    private Map<Integer, Review> reviews = new HashMap<>();
+    private Map<Integer, Review> reviews;
+
+    public ReviewRepositoryImpl() {
+        reviews = new HashMap<>();
+    }
 
     @Override
     public Map<Integer, Review> getDataStorage() {

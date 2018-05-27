@@ -2,7 +2,6 @@ package com.epam.repository.factory;
 
 import com.epam.beans.*;
 import com.epam.repository.Repository;
-import com.epam.repository.UserRepository;
 import com.epam.repository.impl.*;
 
 

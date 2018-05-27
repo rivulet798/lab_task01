@@ -1,6 +1,7 @@
 package com.epam.beans;
 
-public class Review implements Identifier{
+public class Review implements Identifier {
+    static final long serialVersionUID = 4L;
     private int id;
     private String content;
     private Tour tour;
@@ -50,14 +51,24 @@ public class Review implements Identifier{
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         Review review = (Review) o;
 
-        if (id != review.id) return false;
-        if (content != null ? !content.equals(review.content) : review.content != null) return false;
-        if (tour != null ? !tour.equals(review.tour) : review.tour != null) return false;
+        if (id != review.id) {
+            return false;
+        }
+        if (content != null ? !content.equals(review.content) : review.content != null) {
+            return false;
+        }
+        if (tour != null ? !tour.equals(review.tour) : review.tour != null) {
+            return false;
+        }
         return user != null ? user.equals(review.user) : review.user == null;
 
     }

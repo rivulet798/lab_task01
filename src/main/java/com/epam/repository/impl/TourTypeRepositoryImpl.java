@@ -7,7 +7,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class TourTypeRepositoryImpl implements TourTypeRepository {
-    private Map<Integer, TourType> tourTypes = new HashMap<>();
+    private Map<Integer, TourType> tourTypes;
+
+    public TourTypeRepositoryImpl() {
+        tourTypes = new HashMap<>();
+    }
 
     @Override
     public Map<Integer, TourType> getDataStorage() {

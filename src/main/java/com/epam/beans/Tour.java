@@ -4,7 +4,8 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 
-public class Tour implements Identifier{
+public class Tour implements Identifier {
+    static final long serialVersionUID = 5L;
     private int id;
     private String photo;
     private LocalDateTime date;
@@ -17,7 +18,8 @@ public class Tour implements Identifier{
     public Tour() {
     }
 
-    public Tour(int id, String photo, LocalDateTime date, LocalTime duration, String description, BigDecimal cost, TourType tourType, Hotel hotel) {
+    public Tour(int id, String photo, LocalDateTime date, LocalTime duration, String description, BigDecimal cost,
+                TourType tourType, Hotel hotel) {
         this.id = id;
         this.photo = photo;
         this.date = date;
@@ -94,18 +96,36 @@ public class Tour implements Identifier{
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         Tour tour = (Tour) o;
 
-        if (id != tour.id) return false;
-        if (photo != null ? !photo.equals(tour.photo) : tour.photo != null) return false;
-        if (date != null ? !date.equals(tour.date) : tour.date != null) return false;
-        if (duration != null ? !duration.equals(tour.duration) : tour.duration != null) return false;
-        if (description != null ? !description.equals(tour.description) : tour.description != null) return false;
-        if (cost != null ? !cost.equals(tour.cost) : tour.cost != null) return false;
-        if (tourType != null ? !tourType.equals(tour.tourType) : tour.tourType != null) return false;
+        if (id != tour.id) {
+            return false;
+        }
+        if (photo != null ? !photo.equals(tour.photo) : tour.photo != null) {
+            return false;
+        }
+        if (date != null ? !date.equals(tour.date) : tour.date != null) {
+            return false;
+        }
+        if (duration != null ? !duration.equals(tour.duration) : tour.duration != null) {
+            return false;
+        }
+        if (description != null ? !description.equals(tour.description) : tour.description != null) {
+            return false;
+        }
+        if (cost != null ? !cost.equals(tour.cost) : tour.cost != null) {
+            return false;
+        }
+        if (tourType != null ? !tourType.equals(tour.tourType) : tour.tourType != null) {
+            return false;
+        }
         return hotel != null ? hotel.equals(tour.hotel) : tour.hotel == null;
 
     }

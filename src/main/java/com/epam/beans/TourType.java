@@ -1,13 +1,14 @@
 package com.epam.beans;
 
-public class TourType implements Identifier{
+public class TourType implements Identifier {
+    static final long serialVersionUID = 6L;
     private int id;
     private String name;
 
-    TourType() {
+    public TourType() {
     }
 
-    TourType(int id, String name) {
+    public TourType(int id, String name) {
         this.id = id;
         this.name = name;
     }
@@ -30,12 +31,18 @@ public class TourType implements Identifier{
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         TourType tourType = (TourType) o;
 
-        if (id != tourType.id) return false;
+        if (id != tourType.id) {
+            return false;
+        }
         return name != null ? name.equals(tourType.name) : tourType.name == null;
 
     }
